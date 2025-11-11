@@ -1,0 +1,92 @@
+================================================================================
+RAPPORT D'ANALYSE - TEXT MINING DES DISCOURS POLITIQUES MAROCAINS
+================================================================================
+
+1. RÉSUMÉ EXÉCUTIF
+--------------------------------------------------------------------------------
+
+PAM:
+  • Nombre de mots analysés: 556
+  • Thèmes principaux: Emploi, Social, Gouvernance
+  • Ton général: Positif - Focus sur les propositions et solutions
+
+PI:
+  • Nombre de mots analysés: 2705
+  • Thèmes principaux: Économie, Environnement, Social
+  • Ton général: Positif - Focus sur les propositions et solutions
+
+PJD:
+  • Nombre de mots analysés: 826
+  • Thèmes principaux: Gouvernance, Justice, Social
+  • Ton général: Positif - Focus sur les propositions et solutions
+
+RNI:
+  • Nombre de mots analysés: 926
+  • Thèmes principaux: Social, Emploi, Économie
+  • Ton général: Positif - Focus sur les propositions et solutions
+
+================================================================================
+2. ANALYSE COMPARATIVE DES PRIORITÉS
+--------------------------------------------------------------------------------
+
+Thèmes traités par tous les partis:
+  • Justice: PAM, PI, PJD, RNI
+  • Économie: PAM, PI, PJD, RNI
+  • Emploi: PAM, PI, PJD, RNI
+  • Éducation: PAM, PI, PJD, RNI
+  • Environnement: PAM, PI, PJD, RNI
+  • Social: PAM, PI, PJD, RNI
+  • Gouvernance: PAM, PI, PJD, RNI
+  • Agriculture: PAM, PI, PJD, RNI
+  • Jeunesse: PAM, PJD, RNI
+  • Santé: PAM, PI, RNI
+  • Droits_Femme: PAM, PI, RNI
+  • Logement: PAM, PI, RNI
+
+Thèmes spécifiques à certains partis:
+
+================================================================================
+3. ANALYSE DES OPINIONS/SENTIMENTS
+--------------------------------------------------------------------------------
+
+PAM:
+  Mots positifs: 30
+  Mots négatifs: 3
+  Mots neutres: 1
+  Score: 0.794
+  → Approche propositionnelle, focus sur les solutions
+
+PI:
+  Mots positifs: 93
+  Mots négatifs: 66
+  Mots neutres: 3
+  Score: 0.167
+  → Approche propositionnelle, focus sur les solutions
+
+PJD:
+  Mots positifs: 29
+  Mots négatifs: 14
+  Mots neutres: 2
+  Score: 0.333
+  → Approche propositionnelle, focus sur les solutions
+
+RNI:
+  Mots positifs: 33
+  Mots négatifs: 10
+  Mots neutres: 1
+  Score: 0.523
+  → Approche propositionnelle, focus sur les solutions
+
+================================================================================
+4. CONCLUSIONS
+--------------------------------------------------------------------------------
+
+Observations principales:
+• Les partis abordent des thématiques variées reflétant leurs priorités
+• Les tons varient entre propositions constructives et critiques
+• Certains thèmes sont communs (développement, social, économie)
+• D'autres thèmes sont spécifiques à chaque parti
+
+================================================================================
+FIN DU RAPPORT
+================================================================================
