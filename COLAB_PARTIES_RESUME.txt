@@ -17,13 +17,20 @@ Temps : Quelques secondes
 Code  : import pandas, numpy, matplotlib, seaborn, spacy...
 
 
-📂 PARTIE 3 : UPLOAD DES FICHIERS TEXTE
+📂 PARTIE 3 : TÉLÉCHARGEMENT DEPUIS GOOGLE DRIVE
 ────────────────────────────────────────────────────────────────────────────
-Quoi  : Upload des 4 fichiers de discours dans Colab
-Temps : Variable (selon taille)
-Code  : from google.colab import files
-        uploaded = files.upload()
-Action: Cliquer sur "Choisir les fichiers" et sélectionner les 4 .txt
+Quoi  : Téléchargement automatique des 4 fichiers depuis Google Drive
+Temps : ~10-30 secondes
+Code  : !pip install gdown -q
+        import gdown
+        # Télécharge les fichiers avec leurs IDs Drive
+        fichiers_drive = {
+            'PAM_Discours.txt': '1SJhMpOXzRaT0xCgWwvzOoarmA-XgG8Qk',
+            'PI_Discours.txt': '12HkfJcto1AZIQi1iUrALgrUlaJ8STGLU',
+            'PJD_Discours.txt': '1oHdyS0SdPcrHxoJhtZGyKEZlCftspU-X',
+            'RNI_Discours.txt': '14mgRIS-zjKxNKUQ3tTHP1oOGNXFRbJPt'
+        }
+Action: Aucune ! Téléchargement automatique (pas d'upload manuel)
 
 
 🏗️ PARTIE 4 : DÉFINITION DE LA CLASSE ET CONFIGURATION
@@ -139,7 +146,7 @@ Résultat: 10 FICHIERS GÉNÉRÉS 🎉
 
 Cellule 1  → PARTIE 1  [Installation]     ⏱️ ~1-2 min
 Cellule 2  → PARTIE 2  [Import]           ⏱️ Quelques sec
-Cellule 3  → PARTIE 3  [Upload]           ⏱️ Variable
+Cellule 3  → PARTIE 3  [Google Drive]     ⏱️ ~10-30 sec
 Cellule 4  → PARTIE 4  [Classe]           ⏱️ Instantané
 Cellule 5  → PARTIE 5  [Méthodes 1-2]     ⏱️ Instantané
 Cellule 6  → PARTIE 6  [Méthodes 3-4]     ⏱️ Instantané

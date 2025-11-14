@@ -12,12 +12,14 @@ Ce guide explique comment diviser et exécuter le code dans Google Colab cellule
 - Allez sur : https://colab.research.google.com/
 - Créez un nouveau notebook : **Fichier → Nouveau notebook**
 
-### 2. Préparer vos fichiers
-Assurez-vous d'avoir vos 4 fichiers de discours prêts :
+### 2. Préparer vos fichiers sur Google Drive
+✅ **Les fichiers sont déjà sur Google Drive !**
 - `PAM_Discours.txt`
 - `PI_Discours.txt`
 - `PJD_Discours.txt`
 - `RNI_Discours.txt`
+
+💡 **Avantage** : Pas besoin de les uploader manuellement à chaque fois, ils seront téléchargés automatiquement depuis Google Drive dans la PARTIE 3 !
 
 ---
 
@@ -92,33 +94,65 @@ print("✅ Tous les modules sont importés !")
 
 ---
 
-## 📂 CELLULE 3 : Upload des fichiers
+## 📂 CELLULE 3 : Téléchargement depuis Google Drive
 
 ### Explication
-Upload de vos 4 fichiers de discours dans Colab
+Téléchargement automatique de vos 4 fichiers depuis Google Drive (pas besoin d'upload manuel !)
 
 ### Code à copier dans la cellule 3
 ```python
 # ============================================================================
-# PARTIE 3 : UPLOAD DES FICHIERS TEXTE
+# PARTIE 3 : TÉLÉCHARGEMENT DEPUIS GOOGLE DRIVE
 # ============================================================================
 
-from google.colab import files
+# Installation de gdown
+!pip install gdown -q
 
-print("📁 Veuillez uploader vos 4 fichiers de discours (.txt)")
-print("   Fichiers attendus : PAM_Discours.txt, PI_Discours.txt, PJD_Discours.txt, RNI_Discours.txt")
+import gdown
+import os
+
+print("=" * 80)
+print("📂 TÉLÉCHARGEMENT DES FICHIERS DEPUIS GOOGLE DRIVE")
+print("=" * 80)
 print()
 
-uploaded = files.upload()
+# Dictionnaire des fichiers avec leurs IDs Google Drive
+fichiers_drive = {
+    'PAM_Discours.txt': '1SJhMpOXzRaT0xCgWwvzOoarmA-XgG8Qk',
+    'PI_Discours.txt': '12HkfJcto1AZIQi1iUrALgrUlaJ8STGLU',
+    'PJD_Discours.txt': '1oHdyS0SdPcrHxoJhtZGyKEZlCftspU-X',
+    'RNI_Discours.txt': '14mgRIS-zjKxNKUQ3tTHP1oOGNXFRbJPt'
+}
 
-print()
-print(f"✅ {len(uploaded)} fichier(s) uploadé(s) avec succès !")
-for filename in uploaded.keys():
-    print(f"   • {filename}")
+# Télécharger chaque fichier
+fichiers_telecharges = 0
+for nom_fichier, file_id in fichiers_drive.items():
+    try:
+        print(f"⏳ Téléchargement de {nom_fichier}...")
+        url = f'https://drive.google.com/uc?id={file_id}'
+        gdown.download(url, nom_fichier, quiet=False)
+        
+        if os.path.exists(nom_fichier):
+            taille = os.path.getsize(nom_fichier)
+            print(f"✅ {nom_fichier} téléchargé ({taille} octets)")
+            fichiers_telecharges += 1
+        else:
+            print(f"❌ Erreur : {nom_fichier} non téléchargé")
+    except Exception as e:
+        print(f"❌ Erreur : {e}")
+    print()
+
+print("=" * 80)
+if fichiers_telecharges == 4:
+    print("✅ SUCCÈS ! Les 4 fichiers téléchargés !")
+else:
+    print(f"⚠️ ATTENTION ! {fichiers_telecharges}/4 fichiers téléchargés")
+print("=" * 80)
 ```
 
-### ⏱️ Temps : Variable selon taille des fichiers
-### 💡 Après exécution, cliquez sur **"Choisir les fichiers"** et sélectionnez vos 4 fichiers
+### ⏱️ Temps : ~10-30 secondes
+### 💡 **Avantages** : Pas besoin d'uploader manuellement à chaque fois ! Les fichiers sont téléchargés automatiquement depuis votre Google Drive.
+### ⚠️ **Important** : Les fichiers doivent être en mode "Accessible à toute personne disposant du lien"
 
 ---
 
@@ -312,6 +346,33 @@ Les graphiques s'afficheront directement dans le notebook grâce à `plt.show()`
 
 ## 🆘 DÉPANNAGE
 
+### Problème : "Erreur de téléchargement depuis Google Drive"
+**Solution** : Vérifiez que les fichiers sont bien partagés en mode "Accessible à toute personne disposant du lien"
+
+**Comment vérifier/modifier le partage :**
+1. Ouvrez Google Drive
+2. Clic droit sur chaque fichier → **Partager**
+3. Cliquez sur **Modifier** (à côté de "Accès limité")
+4. Sélectionnez **"Toute personne disposant du lien"**
+5. Assurez-vous que le rôle est **"Lecteur"**
+6. Cliquez sur **Terminé**
+
+**Alternative - Utiliser vos propres liens :**
+Si vous avez vos propres fichiers sur Drive, remplacez les IDs dans la cellule 3 :
+```python
+fichiers_drive = {
+    'PAM_Discours.txt': 'VOTRE_FILE_ID_1',
+    'PI_Discours.txt': 'VOTRE_FILE_ID_2',
+    'PJD_Discours.txt': 'VOTRE_FILE_ID_3',
+    'RNI_Discours.txt': 'VOTRE_FILE_ID_4'
+}
+```
+
+Pour obtenir le File ID d'un fichier Drive :
+- Ouvrez le fichier dans Google Drive
+- L'URL ressemble à : `https://drive.google.com/file/d/FILE_ID_ICI/view`
+- Copiez la partie entre `/d/` et `/view`
+
 ### Problème : "Module not found"
 **Solution** : Réexécutez la cellule 1 (installation) puis la cellule 2 (import)
 
@@ -320,9 +381,6 @@ Les graphiques s'afficheront directement dans le notebook grâce à `plt.show()`
 ```python
 !python -m spacy download fr_core_news_sm
 ```
-
-### Problème : "Fichiers non trouvés"
-**Solution** : Vérifiez que vous avez bien uploadé les 4 fichiers dans la cellule 3
 
 ### Problème : "Class not defined"
 **Solution** : Exécutez les cellules 4 à 10 dans l'ordre avant la cellule 11
