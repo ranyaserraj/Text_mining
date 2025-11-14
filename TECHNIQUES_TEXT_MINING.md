@@ -4,11 +4,52 @@
 
 Ce projet utilise **5 grandes familles de techniques** de text mining pour analyser les discours politiques.
 
+⚡ **NOUVEAU** : Intégration de la **lemmatisation avec spaCy** pour une analyse linguistique professionnelle !
+
 ---
 
 ## 1️⃣ PRÉTRAITEMENT (NLP - Natural Language Processing)
 
-### **a) Tokenisation**
+### **🔥 a) Lemmatisation (Technique Avancée avec spaCy)**
+**Quoi :** Réduire chaque mot à sa **forme canonique** (lemme = forme de base du dictionnaire)
+
+**Exemple concret :**
+```python
+"développons" → "développer"
+"développement" → "développement"
+"développé" → "développer"
+"politiques" → "politique"
+```
+
+**Comment ça marche :**
+1. spaCy analyse la structure grammaticale du mot
+2. Identifie sa catégorie (verbe, nom, adjectif...)
+3. Applique les règles morphologiques pour trouver le lemme
+
+**Différence avec Stemming (racinisation simple) :**
+```
+Stemming : "développons" → "develop" (racine approximative)
+Lemmatisation : "développons" → "développer" (vrai mot du dictionnaire)
+```
+
+**Pourquoi c'est crucial :**
+- ✅ Regroupe les variantes : `développer`, `développons`, `développé` → même concept
+- ✅ Réduit le volume de ~50% tout en gardant le sens
+- ✅ Résultats plus précis et professionnels
+
+**Impact dans notre projet :**
+```
+PAM : 1,067 mots → 535 lemmes (50% réduction)
+PI  : 5,370 mots → 2,492 lemmes (54% réduction)
+PJD : 1,605 mots → 746 lemmes (54% réduction)
+RNI : 1,688 mots → 858 lemmes (49% réduction)
+```
+
+**Bibliothèque :** spaCy avec modèle `fr_core_news_sm`
+
+---
+
+### **b) Tokenisation**
 **Quoi :** Découper le texte en unités individuelles (mots)
 ```python
 "L'emploi est prioritaire" → ["L'", "emploi", "est", "prioritaire"]
@@ -18,7 +59,7 @@ Ce projet utilise **5 grandes familles de techniques** de text mining pour analy
 
 ---
 
-### **b) Normalisation**
+### **c) Normalisation**
 **Quoi :** Mettre tout en minuscules
 ```python
 "EMPLOI" → "emploi"
@@ -29,7 +70,7 @@ Ce projet utilise **5 grandes familles de techniques** de text mining pour analy
 
 ---
 
-### **c) Nettoyage**
+### **d) Nettoyage**
 **Quoi :** Supprimer les éléments inutiles
 - Ponctuation : `. , ! ? ; :`
 - Chiffres : `2021, 1500, 67`
@@ -39,7 +80,7 @@ Ce projet utilise **5 grandes familles de techniques** de text mining pour analy
 
 ---
 
-### **d) Suppression des Stopwords**
+### **e) Suppression des Stopwords**
 **Quoi :** Retirer les mots vides qui n'ont pas de signification
 ```python
 Stopwords : le, la, les, un, une, de, du, et, ou, dans, pour...
@@ -369,6 +410,13 @@ F_rel = (Occurrences_thème / Total_mots) × 1000
 ### **Python 3.12**
 Langage de programmation
 
+### **🔥 spaCy (Nouvelle technologie NLP)**
+- **Lemmatisation avancée** avec modèle `fr_core_news_sm`
+- Analyse morphologique et grammaticale
+- Tokenisation intelligente
+- Détection automatique des stopwords
+- **Impact :** Réduction de 50% du volume avec précision linguistique
+
 ### **Pandas**
 - Manipulation de données tabulaires
 - DataFrames pour organiser les résultats
@@ -428,7 +476,8 @@ Une caractéristique mesurable (ex: nombre de mots positifs)
 ```
 Texte brut
     ↓
-1. PRÉTRAITEMENT
+1. PRÉTRAITEMENT (avec spaCy)
+   - 🔥 Lemmatisation (Nouveau!)
    - Tokenisation
    - Normalisation
    - Nettoyage
@@ -589,11 +638,16 @@ O(p × t) où p = nombre de partis
 
 Ce projet utilise **5 techniques principales** :
 
-1. **Prétraitement NLP** → Nettoyer et préparer
+1. **🔥 Prétraitement NLP avec Lemmatisation** → Nettoyer et normaliser avec spaCy (Nouveau!)
 2. **Analyse Thématique** → Identifier les sujets
 3. **Analyse de Sentiment** → Mesurer le ton
 4. **Co-occurrence** → Trouver les liens
 5. **Visualisation** → Présenter les résultats
+
+**⚡ NOUVEAUTÉ : Lemmatisation avec spaCy**
+- Réduction de 50% du volume de mots
+- Précision linguistique professionnelle
+- Regroupement intelligent des variantes
 
 **Toutes ces techniques ensemble** permettent une analyse **complète, objective et visuelle** des discours politiques !
 

@@ -12,8 +12,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
+import spacy
 import warnings
 warnings.filterwarnings('ignore')
+
+# Charger le modèle français de spaCy pour la lemmatisation
+try:
+    nlp = spacy.load("fr_core_news_sm")
+    print("[INFO] Modèle spaCy français chargé avec succès")
+except OSError:
+    print("[ERREUR] Modèle spaCy non trouvé. Installation nécessaire:")
+    print("  python -m spacy download fr_core_news_sm")
+    nlp = None
 
 # Configuration de matplotlib pour afficher les caractères français/arabes
 plt.rcParams['font.family'] = 'DejaVu Sans'
@@ -130,9 +140,9 @@ class AnalyseTextMining:
         print()
 
     def pretraiter_textes(self):
-        """Prétraitement: nettoyage et tokenisation"""
+        """Prétraitement: nettoyage, tokenisation et lemmatisation"""
         print("=" * 80)
-        print("ÉTAPE 2: PRÉTRAITEMENT DES TEXTES")
+        print("ÉTAPE 2: PRÉTRAITEMENT DES TEXTES (avec Lemmatisation)")
         print("=" * 80)
         
         for parti, texte in self.textes_bruts.items():
@@ -141,22 +151,49 @@ class AnalyseTextMining:
                 print(f"[!] {parti}: Texte vide, ignore")
                 continue
             
-            # Nettoyage
-            texte = texte.lower()
-            texte = re.sub(r'[^\w\s\-éèêëàâäôöùûüçïî]', ' ', texte)
-            texte = re.sub(r'\d+', '', texte)  # Suppression des chiffres
-            texte = re.sub(r'\s+', ' ', texte).strip()
+            # Méthode 1: Avec lemmatisation (si spaCy disponible)
+            if nlp is not None:
+                print(f"[...] {parti}: Lemmatisation en cours...")
+                
+                # Nettoyage basique d'abord
+                texte_nettoye = re.sub(r'\d+', '', texte)  # Supprimer chiffres
+                texte_nettoye = re.sub(r'\s+', ' ', texte_nettoye).strip()
+                
+                # Lemmatisation avec spaCy
+                doc = nlp(texte_nettoye)
+                
+                # Extraire les lemmes (forme de base des mots)
+                lemmes = []
+                for token in doc:
+                    # Filtrer: pas de ponctuation, pas de stopwords, longueur > 2
+                    if (not token.is_punct and 
+                        not token.is_space and 
+                        not token.is_stop and 
+                        len(token.lemma_) > 2 and
+                        token.lemma_.lower() not in self.stopwords_fr):
+                        lemmes.append(token.lemma_.lower())
+                
+                self.textes_nettoyes[parti] = lemmes
+                nb_mots_bruts = len(texte.split())
+                print(f"[OK] {parti}: {len(lemmes)} lemmes extraits "
+                      f"(reduit de {nb_mots_bruts} mots bruts)")
             
-            # Tokenisation et suppression des stopwords
-            mots = texte.split()
-            mots_filtres = [
-                mot for mot in mots 
-                if len(mot) > 2 and mot not in self.stopwords_fr
-            ]
-            
-            self.textes_nettoyes[parti] = mots_filtres
-            print(f"[OK] {parti}: {len(mots_filtres)} mots apres nettoyage "
-                  f"(reduit de {len(mots)} mots)")
+            # Méthode 2: Sans lemmatisation (fallback)
+            else:
+                print(f"[!] {parti}: Lemmatisation indisponible, mode simple")
+                texte = texte.lower()
+                texte = re.sub(r'[^\w\s\-éèêëàâäôöùûüçïî]', ' ', texte)
+                texte = re.sub(r'\d+', '', texte)
+                texte = re.sub(r'\s+', ' ', texte).strip()
+                
+                mots = texte.split()
+                mots_filtres = [
+                    mot for mot in mots 
+                    if len(mot) > 2 and mot not in self.stopwords_fr
+                ]
+                
+                self.textes_nettoyes[parti] = mots_filtres
+                print(f"[OK] {parti}: {len(mots_filtres)} mots apres nettoyage")
         
         print()
 

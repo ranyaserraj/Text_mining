@@ -1,5 +1,5 @@
 ﻿Parti,Nb_Textes,Top_Themes,Ton,Score_Sentiment
-PAM,1,"Emploi(29), Social(26), Gouvernance(17)",Positif,0.7941176470588235
-PI,1,"Économie(141), Environnement(107), Social(79)",Positif,0.16666666666666666
-PJD,1,"Gouvernance(24), Justice(8), Social(7)",Positif,0.3333333333333333
-RNI,1,"Social(44), Emploi(27), Économie(27)",Positif,0.5227272727272727
+PAM,1,"Emploi(23), Gouvernance(22), Social(15)",Positif,0.75
+PI,1,"Économie(116), Environnement(79), Justice(62)",Positif,0.2564102564102564
+PJD,1,"Gouvernance(24), Environnement(10), Justice(9)",Positif,0.3620689655172414
+RNI,1,"Social(38), Économie(27), Emploi(24)",Positif,0.5

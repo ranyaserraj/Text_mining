@@ -6,23 +6,23 @@ RAPPORT D'ANALYSE - TEXT MINING DES DISCOURS POLITIQUES MAROCAINS
 --------------------------------------------------------------------------------
 
 PAM:
-  • Nombre de mots analysés: 556
-  • Thèmes principaux: Emploi, Social, Gouvernance
+  • Nombre de mots analysés: 535
+  • Thèmes principaux: Emploi, Gouvernance, Social
   • Ton général: Positif - Focus sur les propositions et solutions
 
 PI:
-  • Nombre de mots analysés: 2705
-  • Thèmes principaux: Économie, Environnement, Social
+  • Nombre de mots analysés: 2492
+  • Thèmes principaux: Économie, Environnement, Justice
   • Ton général: Positif - Focus sur les propositions et solutions
 
 PJD:
-  • Nombre de mots analysés: 826
-  • Thèmes principaux: Gouvernance, Justice, Social
+  • Nombre de mots analysés: 746
+  • Thèmes principaux: Gouvernance, Environnement, Justice
   • Ton général: Positif - Focus sur les propositions et solutions
 
 RNI:
-  • Nombre de mots analysés: 926
-  • Thèmes principaux: Social, Emploi, Économie
+  • Nombre de mots analysés: 858
+  • Thèmes principaux: Social, Économie, Emploi
   • Ton général: Positif - Focus sur les propositions et solutions
 
 ================================================================================
@@ -30,15 +30,14 @@ RNI:
 --------------------------------------------------------------------------------
 
 Thèmes traités par tous les partis:
-  • Justice: PAM, PI, PJD, RNI
-  • Économie: PAM, PI, PJD, RNI
-  • Emploi: PAM, PI, PJD, RNI
   • Éducation: PAM, PI, PJD, RNI
-  • Environnement: PAM, PI, PJD, RNI
   • Social: PAM, PI, PJD, RNI
   • Gouvernance: PAM, PI, PJD, RNI
+  • Environnement: PAM, PI, PJD, RNI
   • Agriculture: PAM, PI, PJD, RNI
-  • Jeunesse: PAM, PJD, RNI
+  • Justice: PAM, PI, PJD, RNI
+  • Emploi: PAM, PI, PJD, RNI
+  • Économie: PAM, PI, PJD, RNI
   • Santé: PAM, PI, RNI
   • Droits_Femme: PAM, PI, RNI
   • Logement: PAM, PI, RNI
@@ -52,29 +51,29 @@ Thèmes spécifiques à certains partis:
 PAM:
   Mots positifs: 30
   Mots négatifs: 3
-  Mots neutres: 1
-  Score: 0.794
+  Mots neutres: 3
+  Score: 0.750
   → Approche propositionnelle, focus sur les solutions
 
 PI:
-  Mots positifs: 93
-  Mots négatifs: 66
-  Mots neutres: 3
-  Score: 0.167
+  Mots positifs: 94
+  Mots négatifs: 54
+  Mots neutres: 8
+  Score: 0.256
   → Approche propositionnelle, focus sur les solutions
 
 PJD:
-  Mots positifs: 29
-  Mots négatifs: 14
-  Mots neutres: 2
-  Score: 0.333
+  Mots positifs: 34
+  Mots négatifs: 13
+  Mots neutres: 11
+  Score: 0.362
   → Approche propositionnelle, focus sur les solutions
 
 RNI:
-  Mots positifs: 33
-  Mots négatifs: 10
-  Mots neutres: 1
-  Score: 0.523
+  Mots positifs: 29
+  Mots négatifs: 8
+  Mots neutres: 5
+  Score: 0.500
   → Approche propositionnelle, focus sur les solutions
 
 ================================================================================

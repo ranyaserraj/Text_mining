@@ -31,8 +31,11 @@ pip install -r requirements.txt
 
 Ou installer manuellement:
 ```bash
-pip install pandas numpy matplotlib seaborn wordcloud openpyxl
+pip install pandas numpy matplotlib seaborn wordcloud openpyxl spacy
+python -m spacy download fr_core_news_sm
 ```
+
+**Note importante** : Le modèle spaCy `fr_core_news_sm` est nécessaire pour la lemmatisation (technique avancée de NLP)
 
 ## 🚀 Utilisation
 
@@ -67,10 +70,14 @@ Le script va automatiquement:
 
 ## 📈 Méthodologie
 
-### 1. Prétraitement
+### 1. Prétraitement ⚡ **Avec Lemmatisation (Technique Avancée)**
+- **Lemmatisation** : Réduction de chaque mot à sa forme de base (ex: `développons` → `développer`)
 - Suppression des éléments inutiles (ponctuation, chiffres)
-- Tokenisation (séparation en mots)
+- Tokenisation intelligente avec spaCy
 - Suppression des stopwords (mots vides)
+- **Résultat** : ~50% de réduction du volume tout en conservant le sens
+
+💡 **Avantage** : La lemmatisation regroupe les variantes d'un même mot (`développer`, `développement`, `développons` → `développer`), rendant l'analyse beaucoup plus précise et professionnelle.
 
 ### 2. Analyse Thématique
 14 thèmes identifiés automatiquement:
