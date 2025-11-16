@@ -1,0 +1,5 @@
+Parti,Lemmes,Theme_Dominant,Theme_Mentions,Sentiment_RB_Label,Sentiment_RB_Score
+PAM,557,Emploi,23,Positif,0.21875
+PI,2824,Economie,78,Positif,0.2222222222222222
+PJD,851,Gouvernance,18,Positif,0.17647058823529413
+RNI,934,Social,38,Positif,0.2692307692307692
