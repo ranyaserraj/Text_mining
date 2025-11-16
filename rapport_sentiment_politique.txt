@@ -1,0 +1,200 @@
+====================================================================================================
+RAPPORT - ANALYSE SENTIMENT POLITIQUE (MODELE SPECIALISE)
+====================================================================================================
+
+Date : 2025-11-16 21:36:59
+
+====================================================================================================
+1. DATASET D'ENTRAINEMENT POLITIQUE
+====================================================================================================
+Source : Dataset cree specifiquement pour le domaine POLITIQUE
+Total : 397 exemples
+  Positifs : 99
+  Negatifs : 96
+  Neutres  : 202
+Train : 317 exemples
+Test  : 80 exemples
+
+====================================================================================================
+2. EVALUATION DES MODELES (DATASET POLITIQUE)
+====================================================================================================
+
+Naive Bayes :
+  Accuracy : 0.662
+  F1-Score : 0.614
+
+SVM (Linear) :
+  Accuracy : 0.875
+  F1-Score : 0.871
+
+Logistic Regression :
+  Accuracy : 0.650
+  F1-Score : 0.594
+
+Random Forest :
+  Accuracy : 0.838
+  F1-Score : 0.832
+
+====================================================================================================
+3. RESULTATS - DISCOURS POLITIQUES
+====================================================================================================
+
+PAM :
+
+  Naive Bayes :
+    Classe : Neutre
+    Score  : +0.182
+    Positifs : 2/11 (18.2%)
+    Negatifs : 0/11 (0.0%)
+    Neutres  : 9/11 (81.8%)
+
+  SVM (Linear) :
+    Classe : Positif
+    Score  : +0.818
+    Positifs : 9/11 (81.8%)
+    Negatifs : 0/11 (0.0%)
+    Neutres  : 2/11 (18.2%)
+
+  Logistic Regression :
+    Classe : Neutre
+    Score  : +0.182
+    Positifs : 2/11 (18.2%)
+    Negatifs : 0/11 (0.0%)
+    Neutres  : 9/11 (81.8%)
+
+  Random Forest :
+    Classe : Positif
+    Score  : +0.545
+    Positifs : 8/11 (72.7%)
+    Negatifs : 2/11 (18.2%)
+    Neutres  : 1/11 (9.1%)
+
+  Top 5 themes :
+    education       :   2 occurrences
+    economie        :   2 occurrences
+    emploi          :   2 occurrences
+    agriculture     :   2 occurrences
+    jeunesse        :   2 occurrences
+
+PI :
+
+  Naive Bayes :
+    Classe : Neutre
+    Score  : +0.020
+    Positifs : 1/50 (2.0%)
+    Negatifs : 0/50 (0.0%)
+    Neutres  : 49/50 (98.0%)
+
+  SVM (Linear) :
+    Classe : Neutre
+    Score  : +0.120
+    Positifs : 13/50 (26.0%)
+    Negatifs : 7/50 (14.0%)
+    Neutres  : 30/50 (60.0%)
+
+  Logistic Regression :
+    Classe : Neutre
+    Score  : +0.000
+    Positifs : 0/50 (0.0%)
+    Negatifs : 0/50 (0.0%)
+    Neutres  : 50/50 (100.0%)
+
+  Random Forest :
+    Classe : Neutre
+    Score  : -0.220
+    Positifs : 9/50 (18.0%)
+    Negatifs : 20/50 (40.0%)
+    Neutres  : 21/50 (42.0%)
+
+  Top 5 themes :
+    infrastructure  :   3 occurrences
+    agriculture     :   3 occurrences
+    economie        :   2 occurrences
+    emploi          :   2 occurrences
+    education       :   1 occurrences
+
+PJD :
+
+  Naive Bayes :
+    Classe : Neutre
+    Score  : +0.000
+    Positifs : 0/16 (0.0%)
+    Negatifs : 0/16 (0.0%)
+    Neutres  : 16/16 (100.0%)
+
+  SVM (Linear) :
+    Classe : Neutre
+    Score  : +0.062
+    Positifs : 2/16 (12.5%)
+    Negatifs : 1/16 (6.2%)
+    Neutres  : 13/16 (81.2%)
+
+  Logistic Regression :
+    Classe : Neutre
+    Score  : +0.000
+    Positifs : 0/16 (0.0%)
+    Negatifs : 0/16 (0.0%)
+    Neutres  : 16/16 (100.0%)
+
+  Random Forest :
+    Classe : Neutre
+    Score  : -0.125
+    Positifs : 0/16 (0.0%)
+    Negatifs : 2/16 (12.5%)
+    Neutres  : 14/16 (87.5%)
+
+  Top 5 themes :
+    emploi          :   2 occurrences
+    education       :   1 occurrences
+    social          :   1 occurrences
+    securite        :   1 occurrences
+    infrastructure  :   1 occurrences
+
+RNI :
+
+  Naive Bayes :
+    Classe : Neutre
+    Score  : +0.000
+    Positifs : 0/18 (0.0%)
+    Negatifs : 0/18 (0.0%)
+    Neutres  : 18/18 (100.0%)
+
+  SVM (Linear) :
+    Classe : Neutre
+    Score  : +0.500
+    Positifs : 9/18 (50.0%)
+    Negatifs : 0/18 (0.0%)
+    Neutres  : 9/18 (50.0%)
+
+  Logistic Regression :
+    Classe : Neutre
+    Score  : +0.111
+    Positifs : 2/18 (11.1%)
+    Negatifs : 0/18 (0.0%)
+    Neutres  : 16/18 (88.9%)
+
+  Random Forest :
+    Classe : Neutre
+    Score  : -0.056
+    Positifs : 5/18 (27.8%)
+    Negatifs : 6/18 (33.3%)
+    Neutres  : 7/18 (38.9%)
+
+  Top 5 themes :
+    emploi          :   2 occurrences
+    infrastructure  :   2 occurrences
+    administration  :   2 occurrences
+    education       :   1 occurrences
+    economie        :   1 occurrences
+
+====================================================================================================
+4. CLASSEMENT FINAL (SCORE MOYEN)
+====================================================================================================
+1. PAM        : +0.432
+2. RNI        : +0.139
+3. PJD        : -0.016
+4. PI         : -0.020
+
+====================================================================================================
+FIN DU RAPPORT
+====================================================================================================
