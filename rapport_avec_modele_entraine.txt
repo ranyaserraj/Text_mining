@@ -1,0 +1,123 @@
+================================================================================
+RAPPORT FINAL - ANALYSE TEXT MINING AVEC MODELE ENTRAINE
+================================================================================
+
+METHODOLOGIE:
+- Topics: 14 themes predefinis (approche manuelle)
+- Sentiment:
+  * Methode 1: Rule-Based (Lexicon) - Baseline
+  * Methode 2: Modele ML Entraine (Classification Supervisee)
+    Algorithme: LinearSVC
+    Dataset: 60 exemples etiquetes (20 pos, 20 neg, 20 neu)
+
+
+================================================================================
+PARTI : PAM
+================================================================================
+
+Top 5 Themes:
+  - Emploi: 23 mentions
+  - Gouvernance: 16 mentions
+  - Social: 13 mentions
+  - Economie: 9 mentions
+  - Agriculture: 9 mentions
+
+Sentiment Rule-Based:
+  Label: Positif
+  Score: +0.219
+
+Sentiment Modele Entraine (ML):
+  Label: Neutre
+  Score: +0.083
+  Distribution: Pos=16.7%, Neg=8.3%, Neu=75.0%
+  Segments analyses: 12
+
+Difference entre methodes: 0.135
+
+
+================================================================================
+PARTI : PI
+================================================================================
+
+Top 5 Themes:
+  - Economie: 78 mentions
+  - Gouvernance: 55 mentions
+  - Social: 53 mentions
+  - Environnement: 52 mentions
+  - Agriculture: 40 mentions
+
+Sentiment Rule-Based:
+  Label: Positif
+  Score: +0.222
+
+Sentiment Modele Entraine (ML):
+  Label: Positif
+  Score: +0.246
+  Distribution: Pos=40.4%, Neg=15.8%, Neu=43.9%
+  Segments analyses: 57
+
+Difference entre methodes: 0.023
+
+
+================================================================================
+PARTI : PJD
+================================================================================
+
+Top 5 Themes:
+  - Gouvernance: 18 mentions
+  - Social: 12 mentions
+  - Justice: 6 mentions
+  - Emploi: 3 mentions
+  - Jeunesse: 3 mentions
+
+Sentiment Rule-Based:
+  Label: Positif
+  Score: +0.176
+
+Sentiment Modele Entraine (ML):
+  Label: Neutre
+  Score: +0.118
+  Distribution: Pos=23.5%, Neg=11.8%, Neu=64.7%
+  Segments analyses: 17
+
+Difference entre methodes: 0.059
+
+
+================================================================================
+PARTI : RNI
+================================================================================
+
+Top 5 Themes:
+  - Social: 38 mentions
+  - Emploi: 20 mentions
+  - Gouvernance: 20 mentions
+  - Economie: 10 mentions
+  - Sante: 8 mentions
+
+Sentiment Rule-Based:
+  Label: Positif
+  Score: +0.269
+
+Sentiment Modele Entraine (ML):
+  Label: Positif
+  Score: +0.421
+  Distribution: Pos=47.4%, Neg=5.3%, Neu=47.4%
+  Segments analyses: 19
+
+Difference entre methodes: 0.152
+
+
+================================================================================
+COMPARAISON GLOBALE DES METHODES
+================================================================================
+
+Parti      Rule-Based      Modele ML       Difference     
+--------------------------------------------------------------------------------
+PAM        +0.219          +0.083          0.135
+PI         +0.222          +0.246          0.023
+PJD        +0.176          +0.118          0.059
+RNI        +0.269          +0.421          0.152
+
+================================================================================
+FIN DU RAPPORT
+================================================================================
