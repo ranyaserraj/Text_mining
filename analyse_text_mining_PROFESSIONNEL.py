@@ -166,11 +166,25 @@ class AnalyseTextMiningProfessionnelle:
         print("ETAPE 1 : CHARGEMENT DU DATASET D'ENTRAINEMENT")
         print("-"*80)
         
+        # Essayer d'abord le vrai dataset Kaggle
+        valid_path = Path("valid.csv")
         dataset_path = Path("allocine_dataset.csv")
         
-        if dataset_path.exists():
+        if valid_path.exists():
+            print(f"[OK] Dataset REEL Kaggle trouve : {valid_path}")
+            # Charger le vrai dataset (colonnes: index, film-url, review, polarity)
+            df = pd.read_csv(valid_path)
+            # Garder seulement review et polarity
+            self.dataset_sentiment = df[['review', 'polarity']].copy()
+            print(f"[INFO] Source : VRAI dataset AlloCine de Kaggle")
+        elif dataset_path.exists():
             print(f"[OK] Dataset trouve : {dataset_path}")
             self.dataset_sentiment = pd.read_csv(dataset_path)
+            # Vérifier si c'est synthétique ou réel
+            if len(self.dataset_sentiment) < 10000:
+                print(f"[INFO] Source : Dataset synthetique (demonstration)")
+            else:
+                print(f"[INFO] Source : Dataset AlloCine")
         else:
             print("[INFO] Dataset AlloCine non trouve localement.")
             print("[INFO] Creation d'un dataset synthetique etendu pour demonstration...")

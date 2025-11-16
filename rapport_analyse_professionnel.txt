@@ -3,37 +3,37 @@ RAPPORT D'ANALYSE TEXT MINING PROFESSIONNEL
 Version Avancee : Multiples Approches et Comparaisons
 ====================================================================================================
 
-Date : 2025-11-16 20:56:08
+Date : 2025-11-16 21:15:24
 
 ----------------------------------------------------------------------------------------------------
 1. DATASET D'ENTRAINEMENT
 ----------------------------------------------------------------------------------------------------
 Source : AlloCine French Movie Reviews (inspire)
          https://www.kaggle.com/datasets/djilax/allocine-french-movie-reviews
-Total d'exemples : 5,000
-Train : 4,000 exemples
-Test  : 1,000 exemples
-Features : 351 mots (TF-IDF)
+Total d'exemples : 20,000
+Train : 16,000 exemples
+Test  : 4,000 exemples
+Features : 5,000 mots (TF-IDF)
 
 ----------------------------------------------------------------------------------------------------
 2. MODELES DE SENTIMENT : COMPARAISON
 ----------------------------------------------------------------------------------------------------
 
 Naive Bayes :
-  Accuracy : 1.000
-  F1-Score : 1.000
+  Accuracy : 0.902
+  F1-Score : 0.901
 
 SVM (Linear) :
-  Accuracy : 1.000
-  F1-Score : 1.000
+  Accuracy : 0.910
+  F1-Score : 0.909
 
 Logistic Regression :
-  Accuracy : 1.000
-  F1-Score : 1.000
+  Accuracy : 0.912
+  F1-Score : 0.911
 
 Random Forest :
-  Accuracy : 1.000
-  F1-Score : 1.000
+  Accuracy : 0.869
+  F1-Score : 0.864
 
 ====================================================================================================
 ANALYSE : PAM
@@ -46,28 +46,28 @@ Lexicale :
   Classe : Neutre
 
 Naive Bayes :
-  Score  : +0.455
+  Score  : +0.818
   Classe : Positif
-  Positifs : 8/11 (72.7%)
-  Negatifs : 3/11 (27.3%)
+  Positifs : 10/11 (90.9%)
+  Negatifs : 1/11 (9.1%)
 
 SVM (Linear) :
-  Score  : +0.818
-  Classe : Positif
-  Positifs : 10/11 (90.9%)
-  Negatifs : 1/11 (9.1%)
+  Score  : -0.273
+  Classe : Negatif
+  Positifs : 4/11 (36.4%)
+  Negatifs : 7/11 (63.6%)
 
 Logistic Regression :
-  Score  : +0.818
-  Classe : Positif
-  Positifs : 10/11 (90.9%)
-  Negatifs : 1/11 (9.1%)
+  Score  : -0.455
+  Classe : Negatif
+  Positifs : 3/11 (27.3%)
+  Negatifs : 8/11 (72.7%)
 
 Random Forest :
-  Score  : +1.000
-  Classe : Positif
-  Positifs : 11/11 (100.0%)
-  Negatifs : 0/11 (0.0%)
+  Score  : -0.455
+  Classe : Negatif
+  Positifs : 3/11 (27.3%)
+  Negatifs : 8/11 (72.7%)
 
 --- TOPICS : COMPARAISON DES APPROCHES ---
 
@@ -104,28 +104,28 @@ Lexicale :
   Classe : Neutre
 
 Naive Bayes :
-  Score  : +0.040
-  Classe : Neutre
-  Positifs : 26/50 (52.0%)
-  Negatifs : 24/50 (48.0%)
+  Score  : +0.680
+  Classe : Positif
+  Positifs : 42/50 (84.0%)
+  Negatifs : 8/50 (16.0%)
 
 SVM (Linear) :
-  Score  : +0.400
-  Classe : Positif
-  Positifs : 35/50 (70.0%)
-  Negatifs : 15/50 (30.0%)
+  Score  : -0.080
+  Classe : Neutre
+  Positifs : 23/50 (46.0%)
+  Negatifs : 27/50 (54.0%)
 
 Logistic Regression :
-  Score  : +0.480
-  Classe : Positif
-  Positifs : 37/50 (74.0%)
-  Negatifs : 13/50 (26.0%)
+  Score  : -0.440
+  Classe : Negatif
+  Positifs : 14/50 (28.0%)
+  Negatifs : 36/50 (72.0%)
 
 Random Forest :
-  Score  : +1.000
-  Classe : Positif
-  Positifs : 50/50 (100.0%)
-  Negatifs : 0/50 (0.0%)
+  Score  : -0.360
+  Classe : Negatif
+  Positifs : 16/50 (32.0%)
+  Negatifs : 34/50 (68.0%)
 
 --- TOPICS : COMPARAISON DES APPROCHES ---
 
@@ -162,28 +162,28 @@ Lexicale :
   Classe : Neutre
 
 Naive Bayes :
-  Score  : +0.125
+  Score  : +0.250
   Classe : Positif
-  Positifs : 9/16 (56.2%)
-  Negatifs : 7/16 (43.8%)
+  Positifs : 10/16 (62.5%)
+  Negatifs : 6/16 (37.5%)
 
 SVM (Linear) :
-  Score  : +0.875
-  Classe : Positif
-  Positifs : 15/16 (93.8%)
-  Negatifs : 1/16 (6.2%)
+  Score  : -0.125
+  Classe : Negatif
+  Positifs : 7/16 (43.8%)
+  Negatifs : 9/16 (56.2%)
 
 Logistic Regression :
-  Score  : +0.875
-  Classe : Positif
-  Positifs : 15/16 (93.8%)
-  Negatifs : 1/16 (6.2%)
+  Score  : -0.250
+  Classe : Negatif
+  Positifs : 6/16 (37.5%)
+  Negatifs : 10/16 (62.5%)
 
 Random Forest :
-  Score  : +1.000
-  Classe : Positif
-  Positifs : 16/16 (100.0%)
-  Negatifs : 0/16 (0.0%)
+  Score  : -0.375
+  Classe : Negatif
+  Positifs : 5/16 (31.2%)
+  Negatifs : 11/16 (68.8%)
 
 --- TOPICS : COMPARAISON DES APPROCHES ---
 
@@ -220,28 +220,28 @@ Lexicale :
   Classe : Neutre
 
 Naive Bayes :
-  Score  : +0.111
+  Score  : +0.889
   Classe : Positif
-  Positifs : 10/18 (55.6%)
-  Negatifs : 8/18 (44.4%)
+  Positifs : 17/18 (94.4%)
+  Negatifs : 1/18 (5.6%)
 
 SVM (Linear) :
-  Score  : +0.778
-  Classe : Positif
-  Positifs : 16/18 (88.9%)
-  Negatifs : 2/18 (11.1%)
+  Score  : -0.556
+  Classe : Negatif
+  Positifs : 4/18 (22.2%)
+  Negatifs : 14/18 (77.8%)
 
 Logistic Regression :
-  Score  : +0.778
-  Classe : Positif
-  Positifs : 16/18 (88.9%)
-  Negatifs : 2/18 (11.1%)
+  Score  : -0.333
+  Classe : Negatif
+  Positifs : 6/18 (33.3%)
+  Negatifs : 12/18 (66.7%)
 
 Random Forest :
-  Score  : +1.000
-  Classe : Positif
-  Positifs : 18/18 (100.0%)
-  Negatifs : 0/18 (0.0%)
+  Score  : -0.444
+  Classe : Negatif
+  Positifs : 5/18 (27.8%)
+  Negatifs : 13/18 (72.2%)
 
 --- TOPICS : COMPARAISON DES APPROCHES ---
 
