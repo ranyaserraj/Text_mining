@@ -1,0 +1,29 @@
+# ============================================================================
+# DEPENDANCES POUR ANALYSE TEXT MINING PROFESSIONNELLE
+# ============================================================================
+
+# Core Data Science
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Visualisation
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# NLP et Preprocessing
+spacy>=3.5.0
+# Installation modele francais : python -m spacy download fr_core_news_sm
+
+# Machine Learning Traditionnel
+scikit-learn>=1.2.0
+
+# Deep Learning (BERT - optionnel)
+transformers>=4.25.0
+torch>=2.0.0
+
+# Utilitaires
+openpyxl>=3.0.10
+
+# Dataset AlloCine (optionnel - telecharger manuellement)
+# https://www.kaggle.com/datasets/djilax/allocine-french-movie-reviews
+

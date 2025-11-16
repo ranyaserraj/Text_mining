@@ -1,0 +1,290 @@
+====================================================================================================
+RAPPORT D'ANALYSE TEXT MINING PROFESSIONNEL
+Version Avancee : Multiples Approches et Comparaisons
+====================================================================================================
+
+Date : 2025-11-16 20:56:08
+
+----------------------------------------------------------------------------------------------------
+1. DATASET D'ENTRAINEMENT
+----------------------------------------------------------------------------------------------------
+Source : AlloCine French Movie Reviews (inspire)
+         https://www.kaggle.com/datasets/djilax/allocine-french-movie-reviews
+Total d'exemples : 5,000
+Train : 4,000 exemples
+Test  : 1,000 exemples
+Features : 351 mots (TF-IDF)
+
+----------------------------------------------------------------------------------------------------
+2. MODELES DE SENTIMENT : COMPARAISON
+----------------------------------------------------------------------------------------------------
+
+Naive Bayes :
+  Accuracy : 1.000
+  F1-Score : 1.000
+
+SVM (Linear) :
+  Accuracy : 1.000
+  F1-Score : 1.000
+
+Logistic Regression :
+  Accuracy : 1.000
+  F1-Score : 1.000
+
+Random Forest :
+  Accuracy : 1.000
+  F1-Score : 1.000
+
+====================================================================================================
+ANALYSE : PAM
+====================================================================================================
+
+--- SENTIMENT : COMPARAISON DES APPROCHES ---
+
+Lexicale :
+  Score  : +0.008
+  Classe : Neutre
+
+Naive Bayes :
+  Score  : +0.455
+  Classe : Positif
+  Positifs : 8/11 (72.7%)
+  Negatifs : 3/11 (27.3%)
+
+SVM (Linear) :
+  Score  : +0.818
+  Classe : Positif
+  Positifs : 10/11 (90.9%)
+  Negatifs : 1/11 (9.1%)
+
+Logistic Regression :
+  Score  : +0.818
+  Classe : Positif
+  Positifs : 10/11 (90.9%)
+  Negatifs : 1/11 (9.1%)
+
+Random Forest :
+  Score  : +1.000
+  Classe : Positif
+  Positifs : 11/11 (100.0%)
+  Negatifs : 0/11 (0.0%)
+
+--- TOPICS : COMPARAISON DES APPROCHES ---
+
+Approche Lexicale (Top 5 themes) :
+  economie             :   4 occurrences
+  education            :   3 occurrences
+  emploi               :   3 occurrences
+  agriculture          :   3 occurrences
+  jeunesse             :   3 occurrences
+
+Approche LDA (Top 3 topics) :
+  Topic 2 (poids=0.333) : santé, logement, marocain, plan, système
+  Topic 3 (poids=0.332) : dirham, place, emploi, dignité, mettre
+  Topic 4 (poids=0.168) : politique, année, charge, nouveau, public
+
+Approche NMF (Top 3 topics) :
+  Topic 3 (poids=0.173) : scolaire, priver, offrir, améliorer, santé
+  Topic 5 (poids=0.164) : année, régulation, politique, gouvernance, public
+  Topic 4 (poids=0.151) : économie, droit, développement, capital, social
+
+Approche LSA (Top 3 topics) :
+  Topic 1 (poids=0.480) : dirham, emploi, public, place, accès
+  Topic 5 (poids=0.012) : année, régulation, politique, grand, lutte
+  Topic 2 (poids=-0.032) : dirham, emploi, jeune, rural, santé
+
+====================================================================================================
+ANALYSE : PI
+====================================================================================================
+
+--- SENTIMENT : COMPARAISON DES APPROCHES ---
+
+Lexicale :
+  Score  : +0.018
+  Classe : Neutre
+
+Naive Bayes :
+  Score  : +0.040
+  Classe : Neutre
+  Positifs : 26/50 (52.0%)
+  Negatifs : 24/50 (48.0%)
+
+SVM (Linear) :
+  Score  : +0.400
+  Classe : Positif
+  Positifs : 35/50 (70.0%)
+  Negatifs : 15/50 (30.0%)
+
+Logistic Regression :
+  Score  : +0.480
+  Classe : Positif
+  Positifs : 37/50 (74.0%)
+  Negatifs : 13/50 (26.0%)
+
+Random Forest :
+  Score  : +1.000
+  Classe : Positif
+  Positifs : 50/50 (100.0%)
+  Negatifs : 0/50 (0.0%)
+
+--- TOPICS : COMPARAISON DES APPROCHES ---
+
+Approche Lexicale (Top 5 themes) :
+  infrastructure       :   5 occurrences
+  agriculture          :   5 occurrences
+  economie             :   4 occurrences
+  emploi               :   3 occurrences
+  social               :   3 occurrences
+
+Approche LDA (Top 3 topics) :
+  Topic 4 (poids=0.234) : permettre, moyen, baser, droit, public
+  Topic 1 (poids=0.230) : niveau, service, public, national, déficit
+  Topic 3 (poids=0.228) : passer, ressource, social, ménage, public
+
+Approche NMF (Top 3 topics) :
+  Topic 2 (poids=0.142) : ressource, consommation, citoyen, énergie, condition
+  Topic 4 (poids=0.141) : déficit, infrastructure, absence, coordination, articulation
+  Topic 3 (poids=0.112) : loi, droit, citoyen, société, confiance
+
+Approche LSA (Top 3 topics) :
+  Topic 1 (poids=0.393) : ressource, citoyen, passer, social, ménage
+  Topic 3 (poids=0.010) : loi, citoyen, droit, société, confiance
+  Topic 5 (poids=-0.023) : passer, infrastructure, modèle, rupture, édification
+
+====================================================================================================
+ANALYSE : PJD
+====================================================================================================
+
+--- SENTIMENT : COMPARAISON DES APPROCHES ---
+
+Lexicale :
+  Score  : +0.000
+  Classe : Neutre
+
+Naive Bayes :
+  Score  : +0.125
+  Classe : Positif
+  Positifs : 9/16 (56.2%)
+  Negatifs : 7/16 (43.8%)
+
+SVM (Linear) :
+  Score  : +0.875
+  Classe : Positif
+  Positifs : 15/16 (93.8%)
+  Negatifs : 1/16 (6.2%)
+
+Logistic Regression :
+  Score  : +0.875
+  Classe : Positif
+  Positifs : 15/16 (93.8%)
+  Negatifs : 1/16 (6.2%)
+
+Random Forest :
+  Score  : +1.000
+  Classe : Positif
+  Positifs : 16/16 (100.0%)
+  Negatifs : 0/16 (0.0%)
+
+--- TOPICS : COMPARAISON DES APPROCHES ---
+
+Approche Lexicale (Top 5 themes) :
+  democratie           :   3 occurrences
+  emploi               :   2 occurrences
+  social               :   2 occurrences
+  education            :   1 occurrences
+  securite             :   1 occurrences
+
+Approche LDA (Top 3 topics) :
+  Topic 3 (poids=0.250) : spirituel, pjd, politique, parti, benkirane
+  Topic 2 (poids=0.250) : benkirane, parti, discours, vouloir, constituer
+  Topic 5 (poids=0.249) : citoyen, direct, parti, jeunesse, élection
+
+Approche NMF (Top 3 topics) :
+  Topic 4 (poids=0.172) : abdelilah, passer, route, mobilisation, benkirane
+  Topic 2 (poids=0.163) : direct, confiance, citoyen, jeunesse, électoral
+  Topic 5 (poids=0.127) : veiller, beaucoup, politique, spirituel, relation
+
+Approche LSA (Top 3 topics) :
+  Topic 1 (poids=0.446) : benkirane, politique, parti, électoral, spirituel
+  Topic 2 (poids=0.042) : direct, jeunesse, confiance, salaire, populaire
+  Topic 3 (poids=0.016) : politique, voter, veiller, beaucoup, dire
+
+====================================================================================================
+ANALYSE : RNI
+====================================================================================================
+
+--- SENTIMENT : COMPARAISON DES APPROCHES ---
+
+Lexicale :
+  Score  : +0.017
+  Classe : Neutre
+
+Naive Bayes :
+  Score  : +0.111
+  Classe : Positif
+  Positifs : 10/18 (55.6%)
+  Negatifs : 8/18 (44.4%)
+
+SVM (Linear) :
+  Score  : +0.778
+  Classe : Positif
+  Positifs : 16/18 (88.9%)
+  Negatifs : 2/18 (11.1%)
+
+Logistic Regression :
+  Score  : +0.778
+  Classe : Positif
+  Positifs : 16/18 (88.9%)
+  Negatifs : 2/18 (11.1%)
+
+Random Forest :
+  Score  : +1.000
+  Classe : Positif
+  Positifs : 18/18 (100.0%)
+  Negatifs : 0/18 (0.0%)
+
+--- TOPICS : COMPARAISON DES APPROCHES ---
+
+Approche Lexicale (Top 5 themes) :
+  infrastructure       :   3 occurrences
+  jeunesse             :   3 occurrences
+  democratie           :   3 occurrences
+  emploi               :   2 occurrences
+  social               :   2 occurrences
+
+Approche LDA (Top 3 topics) :
+  Topic 2 (poids=0.332) : programme, santé, grand, développement, éducation
+  Topic 4 (poids=0.331) : développement, public, politique, csmd, modèle
+  Topic 5 (poids=0.222) : valeur, modèle, citoyen, principe, rni
+
+Approche NMF (Top 3 topics) :
+  Topic 2 (poids=0.145) : rural, service, renforcer, public, politique
+  Topic 1 (poids=0.144) : modèle, développement, grand, valeur, csmd
+  Topic 5 (poids=0.128) : action, offrir, dignité, faire, principe
+
+Approche LSA (Top 3 topics) :
+  Topic 1 (poids=0.434) : développement, modèle, grand, santé, public
+  Topic 3 (poids=0.008) : programme, formule, électoral, terrain, contribution
+  Topic 4 (poids=0.008) : place, esprit, ouverture, contribution, écoute
+
+====================================================================================================
+3. METHODOLOGIE ET TECHNIQUES
+====================================================================================================
+
+CLASSIFICATION DE SENTIMENT :
+  1. Approche Lexicale : Comptage de mots positifs/negatifs
+  2. Naive Bayes : Modele probabiliste simple
+  3. SVM (Linear) : Separation lineaire optimale
+  4. Logistic Regression : Regression logistique binaire
+  5. Random Forest : Ensemble de 100 arbres de decision
+  6. BERT : Modele de deep learning pre-entraine
+
+TOPIC MINING :
+  1. Approche Lexicale : 14 themes predefinis avec mots-cles
+  2. LDA : Latent Dirichlet Allocation (modele generatif)
+  3. NMF : Non-Negative Matrix Factorization (factorisation)
+  4. LSA : Latent Semantic Analysis (SVD)
+
+====================================================================================================
+FIN DU RAPPORT
+====================================================================================================
