@@ -1,0 +1,46 @@
+# Requirements pour Text Mining avec MACHINE LEARNING
+# Version avancée du projet
+
+# Data manipulation
+numpy==1.24.3
+pandas==2.0.3
+
+# Visualisation
+matplotlib==3.7.2
+seaborn==0.12.2
+wordcloud==1.9.2
+
+# Excel output
+openpyxl==3.1.2
+
+# NLP de base
+spacy>=3.6.0
+
+# ============================================================================
+# NOUVEAUTÉS : MACHINE LEARNING
+# ============================================================================
+
+# Scikit-learn pour clustering et vectorisation
+scikit-learn>=1.3.0
+
+# Transformers pour classification supervisée (BERT)
+transformers>=4.30.0
+torch>=2.0.0
+# Si vous n'avez pas de GPU, PyTorch CPU suffit:
+# torch>=2.0.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+
+# Accélérateur pour Transformers (optionnel mais recommandé)
+accelerate>=0.20.0
+
+# ============================================================================
+# MODÈLES À TÉLÉCHARGER APRÈS INSTALLATION
+# ============================================================================
+# 
+# 1. Modèle spaCy français :
+#    python -m spacy download fr_core_news_sm
+#
+# 2. Modèle BERT (téléchargement automatique au premier lancement) :
+#    nlptown/bert-base-multilingual-uncased-sentiment
+#
+# ============================================================================
+
