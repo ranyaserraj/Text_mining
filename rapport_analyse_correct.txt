@@ -1,0 +1,116 @@
+====================================================================================================
+RAPPORT D'ANALYSE TEXT MINING PROFESSIONNEL - VERSION CORRIGEE
+====================================================================================================
+
+Date : 2025-11-16 21:27:01
+
+====================================================================================================
+1. DATASET D'ENTRAINEMENT (AlloCine - Films)
+====================================================================================================
+Source : AlloCine French Movie Reviews (Kaggle)
+Total : 20,000 exemples
+Train : 16,000 exemples
+Test  : 4,000 exemples
+
+====================================================================================================
+2. EVALUATION DES MODELES ML (SUR FILMS)
+====================================================================================================
+
+Naive Bayes :
+  Accuracy : 0.902
+  F1-Score : 0.901
+
+SVM (Linear) :
+  Accuracy : 0.910
+  F1-Score : 0.909
+
+Logistic Regression :
+  Accuracy : 0.912
+  F1-Score : 0.911
+
+Random Forest :
+  Accuracy : 0.869
+  F1-Score : 0.864
+
+[NOTE IMPORTANTE]
+Ces modeles sont evalues sur des CRITIQUES DE FILMS.
+Ils ne peuvent PAS etre appliques directement aux discours politiques
+car le vocabulaire est completement different.
+
+====================================================================================================
+3. ANALYSE DES DISCOURS POLITIQUES (APPROCHE LEXICALE)
+====================================================================================================
+
+PAM :
+  Score global : +0.000
+  Classe       : Neutre
+  Positifs     : 0/11 (0.0%)
+  Negatifs     : 0/11 (0.0%)
+  Neutres      : 11/11 (100.0%)
+
+  Top 5 themes :
+    economie        :   4 occurrences
+    education       :   3 occurrences
+    emploi          :   3 occurrences
+    agriculture     :   3 occurrences
+    jeunesse        :   3 occurrences
+
+PI :
+  Score global : +0.140
+  Classe       : Positif
+  Positifs     : 7/50 (14.0%)
+  Negatifs     : 0/50 (0.0%)
+  Neutres      : 43/50 (86.0%)
+
+  Top 5 themes :
+    infrastructure  :   5 occurrences
+    agriculture     :   5 occurrences
+    economie        :   4 occurrences
+    emploi          :   3 occurrences
+    social          :   3 occurrences
+
+PJD :
+  Score global : +0.000
+  Classe       : Neutre
+  Positifs     : 0/16 (0.0%)
+  Negatifs     : 0/16 (0.0%)
+  Neutres      : 16/16 (100.0%)
+
+  Top 5 themes :
+    democratie      :   3 occurrences
+    emploi          :   2 occurrences
+    social          :   2 occurrences
+    education       :   1 occurrences
+    securite        :   1 occurrences
+
+RNI :
+  Score global : +0.111
+  Classe       : Positif
+  Positifs     : 2/18 (11.1%)
+  Negatifs     : 0/18 (0.0%)
+  Neutres      : 16/18 (88.9%)
+
+  Top 5 themes :
+    infrastructure  :   3 occurrences
+    jeunesse        :   3 occurrences
+    democratie      :   3 occurrences
+    emploi          :   2 occurrences
+    social          :   2 occurrences
+
+====================================================================================================
+4. METHODOLOGIE
+====================================================================================================
+
+APPROCHE CORRECTE :
+1. Evaluation des modeles ML sur AlloCine (films) : 91% accuracy
+2. Application sur discours politiques avec approche LEXICALE adaptee
+3. Pas de melange domaine films/politique
+
+AVANTAGES :
+- Approche honnete et academiquement correcte
+- Lexique adapte au domaine politique
+- Resultats interpretes et coherents
+
+====================================================================================================
+FIN DU RAPPORT
+====================================================================================================
